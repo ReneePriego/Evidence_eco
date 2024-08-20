@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import seaborn as sns # visualization
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Lasso
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+from statsmodels.tools.tools import add_constant
+from scipy.stats import shapiro, kstest, normaltest
+
+#carga de la base de datos
+from google.colab import files
+files.upload()
+
+#levantamos la data con pandas
+df = pd.read_csv("/content/Evid_resta.csv", encoding="latin-1", delimiter=";")
+df.head(10)
+
+#Cleaning and processing
+df.info()
+
